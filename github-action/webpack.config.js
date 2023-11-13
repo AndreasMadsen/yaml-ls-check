@@ -1,4 +1,5 @@
 const path = require('path');
+const webpack = require('webpack');
 
 module.exports = {
   entry: path.resolve(__dirname, 'index.ts'),
@@ -14,6 +15,14 @@ module.exports = {
       }
     ],
   },
+  plugins: [
+    new webpack.NormalModuleReplacementPlugin(
+      /\/umd\//,
+      function (resource) {
+        resource.request = resource.request.replace('/umd/', '/esm/');
+      }
+    ),
+  ],
   resolve: {
     extensions: [ '.ts', '.js' ],
   },

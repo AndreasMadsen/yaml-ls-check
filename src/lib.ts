@@ -1,17 +1,17 @@
 import * as fs from 'fs';
 import * as path from 'path';
 
-import { YAMLSchemaService } from 'yaml-language-server/out/server/src/languageservice/services/yamlSchemaService';
-import { YAMLValidation } from 'yaml-language-server/out/server/src/languageservice/services/yamlValidation';
-import { WorkspaceContextService } from 'yaml-language-server/out/server/src/languageservice/yamlLanguageService';
+import { YAMLSchemaService } from 'yaml-language-server/lib/esm/languageservice/services/yamlSchemaService';
+import { YAMLValidation } from 'yaml-language-server/lib/esm/languageservice/services/yamlValidation';
+import { WorkspaceContextService } from 'yaml-language-server/lib/esm/languageservice/yamlLanguageService';
 import { TextDocument } from 'vscode-languageserver-textdocument';
 import { Diagnostic } from 'vscode-languageserver-types';
 
 import { readJson } from './util';
 import { createSchemaRequestHandler } from './schema-handler';
 import { glob } from 'glob';
-import { TelemetryEvent } from 'yaml-language-server/out/server/src/languageservice/telemetry';
-import { YamlVersion } from 'yaml-language-server/out/server/src/languageservice/parser/yamlParser07';
+import { TelemetryEvent } from 'yaml-language-server/lib/esm/languageservice/telemetry';
+import { YamlVersion } from 'yaml-language-server/lib/esm/languageservice/parser/yamlParser07';
 
 export class ConsoleTelemetry {
     constructor() {}
