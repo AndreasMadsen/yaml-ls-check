@@ -13,7 +13,6 @@ module.exports = {
         exclude: /node_modules/,
       }
     ],
-    noParse: /node_modules[\\|/](prettier|vscode-languageserver|vscode-json-languageservice)/
   },
   resolve: {
     extensions: [ '.ts', '.js' ],
